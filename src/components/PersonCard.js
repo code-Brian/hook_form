@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import UserForm from './components/UserForm'
 
 const PersonCard = (props)=> {
     const { firstName, lastName, email, password, confirmPassword } = props
@@ -17,3 +16,5 @@ const PersonCard = (props)=> {
         </div>
     )
 }
+
+export default PersonCard
