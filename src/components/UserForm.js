@@ -9,10 +9,10 @@ const UserForm = (props)=> {
 
     const createUser = (e)=> {
         // this synthetic event prevents the page from refreshing on form submission
-        email.preventDefault()
+        e.preventDefault()
 
         const newUser = { firstName, lastName, email, password, confirmPassword }
-        console.log(`Welcome, ${firstName}!`)
+        console.log(`Welcome, ${newUser}!`)
         setFirstName("")
         setLastName("")
         setEmail("")
@@ -41,6 +41,15 @@ const UserForm = (props)=> {
             <div>
                 <label>Confirm Password: </label>
                 <input type="password" onChange={(e)=> setConfirmPassword(e.target.value)}></input>
+            </div>
+            <input type="submit" value="Create User"></input>
+
+            <div>
+                <h3>First Name: { firstName }</h3>
+                <h3>Last Name: { lastName }</h3>
+                <h3>Email: { email }</h3>
+                <h3>Password: { password }</h3>
+                <h3>Confirm Password: { confirmPassword }</h3>
             </div>
         </form>
     )
